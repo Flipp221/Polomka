@@ -1,0 +1,64 @@
+﻿<Window x:Class="Polomka.addClientsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Polomka"
+        mc:Ignorable="d"
+        Title="addClientsWindow" Height="550" Width="259.274" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="#66FCF1">
+    <Grid>
+        <TextBox x:Name="NameTB"
+                 Text="{Binding Name}"
+  materialDesign:HintAssist.Hint="Имя"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+  VerticalAlignment="Top" Margin="10,10,10,0" />
+        <Grid
+  Width="124">
+            <Button
+    Style="{StaticResource MaterialDesignOutlinedButton}"
+    materialDesign:ButtonProgressAssist.Value="-1"
+    materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+    materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+    Content="Сохранить"
+    Margin="0,408,4,10"
+    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Click="Button_Click" />
+        </Grid>
+        <Image x:Name="img" HorizontalAlignment="Left" Height="100" Margin="10,275,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button
+            Style="{StaticResource MaterialDesignOutlinedButton}"
+            materialDesign:ButtonProgressAssist.Value="-1"
+            materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+            materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Загрузить"
+            Margin="129,330,10,188"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" Click="Button_Click_1"/>
+        <ComboBox x:Name="markaCB"
+            SelectedItem="{Binding Car_Brands}"
+            DisplayMemberPath="Name_Brand"
+            Style="{StaticResource MaterialDesignOutlinedComboBox}"
+            materialDesign:HintAssist.Hint="Марка автомобиля"
+            ItemsSource="{Binding ShortStringList}"
+            materialDesign:TextFieldAssist.HasClearButton="True" Margin="10,220,10,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="SurnameTB"
+            Text="{Binding Surname}"
+            materialDesign:HintAssist.Hint="Фамилия"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+            VerticalAlignment="Top" Margin="10,52,10,0" />
+        <TextBox x:Name="PatronimycTB"
+            Text="{Binding Patronic}"
+            materialDesign:HintAssist.Hint="Отчество"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+            VerticalAlignment="Top" Margin="10,94,10,0" />
+        <TextBox x:Name="PhoneTB"
+            Text="{Binding Phone}"
+            materialDesign:HintAssist.Hint="Телефон"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+            VerticalAlignment="Top" Margin="10,136,10,0" />
+        <TextBox x:Name="Car_NumberTB"
+            Text="{Binding Car_Number}"
+            materialDesign:HintAssist.Hint="Номер автомобиля"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+            VerticalAlignment="Top" Margin="10,178,10,0" />
+    </Grid>
+</Window>

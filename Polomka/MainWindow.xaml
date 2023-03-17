@@ -1,0 +1,54 @@
+﻿<Window x:Class="Polomka.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Polomka"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize" Background="#1F2833" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid>
+        <Grid x:Name="panelHeader" VerticalAlignment="Top" Height="50" Margin="0,0,652,0"/>
+        <Grid x:Name="sidePanel" Background="#45A29E" HorizontalAlignment="Left" Width="150">
+            <StackPanel>
+                <Grid Height="150" Background="#45A29E">
+                    <Button HorizontalAlignment="Right" Height="20" VerticalAlignment="Top" Background="Transparent" BorderBrush="Transparent">
+                    </Button>
+                </Grid>
+                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontFamily="Century Gothic" FontSize="14" Foreground="White" BorderBrush="Transparent" Background="Transparent" FontWeight="Bold" Height="301">
+                    <ListViewItem Height="40">
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="btnClient" Content="Клиенты" Margin="0,0,0,0" VerticalAlignment="Center" Width="104" Height="36" RenderTransformOrigin="0.24,0.481" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#C5C6C7" FontFamily="Comic Sans MS" FontWeight="Bold" FontSize="14" Click="btnClient_Click" Cursor="Hand"/>
+                        </StackPanel>
+                    </ListViewItem>
+
+                    <ListViewItem Height="40">
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="btnEmployee" Content="Сотрудиники" Margin="0,0,0,0" VerticalAlignment="Center" Width="132" Height="36" BorderBrush="{x:Null}" Foreground="#C5C6C7" Background="{x:Null}" FontFamily="Comic Sans MS" FontWeight="Bold" FontSize="14" Click="btnEmployee_Click" Cursor="Hand"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="40">
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="btnUslugi" Content="Услуги" Margin="0,0,0,0" VerticalAlignment="Center" Width="93" Height="36" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#C5C6C7"  FontFamily="Comic Sans MS" FontWeight="Bold" FontSize="14" Cursor="Hand" Click="btnUslugi_Click"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="40">
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="btnOtder" Content="Заказы" Margin="0,0,0,0" VerticalAlignment="Center" Width="96" Height="36" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#C5C6C7" FontFamily="Comic Sans MS" FontWeight="Bold" FontSize="14" Click="btnOtder_Click" Cursor="Hand"/>
+
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="40">
+                        <StackPanel Orientation="Horizontal"/>
+                    </ListViewItem>
+                    <ListViewItem Height="40">
+                        <StackPanel Orientation="Horizontal">
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="40">
+                        <StackPanel Orientation="Horizontal"/>
+                    </ListViewItem>
+                </ListView>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

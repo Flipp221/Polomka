@@ -1,0 +1,36 @@
+﻿<Window x:Class="Polomka.ServieWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Polomka"
+        mc:Ignorable="d"
+        Title="ServieWindow" Height="450" Width="800" IsVisibleChanged="Mouse_IsVisibleChanged">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="363*"/>
+            <RowDefinition Height="71*"/>
+        </Grid.RowDefinitions>
+        <DataGrid Visibility="Visible" x:Name="DGridServise" AutoGenerateColumns="False" IsReadOnly="True" Margin="10,10,10,4">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Наименование услуги" Binding="{Binding Name_Service}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Цена услуги" Binding="{Binding Price_Service}" Width="*"></DataGridTextColumn>
+                <DataGridTemplateColumn Width="*">
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn x:Name="BuyBtn" Width="200">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="BuyUslBtn" Content="Купить" Width="150" Click="BuyUslBtn_Click" CommandParameter="{Binding Id_Service}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button
+            Style="{StaticResource MaterialDesignPaperDarkButton}"
+            x:Name="BackBtn"
+            ToolTip="Resource name: MaterialDesignPaperDarkButton"
+            Content="Назад"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" Margin="640,10,46,29" Cursor="Hand" Click="BackBtn_Click" Grid.Row="1" />
+    </Grid>
+</Window>
